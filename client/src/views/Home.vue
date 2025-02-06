@@ -92,7 +92,7 @@
       },
     },
     async mounted() {
-      this.getData();
+      await this.getData();
 
       // Note: set interval to show different values
       setInterval(() => {
