@@ -5,3 +5,4 @@ lib/*.json
 coverage
 .env
 package-lock.json
+pnpm-lock.yaml
