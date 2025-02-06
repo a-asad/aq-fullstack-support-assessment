@@ -11,6 +11,10 @@ The application backend fetches emission data per year, per country from the [Fo
 
 The frontend fetches the data, and renders an animated chart. It loops through the years, and for each year it shows a sorted chart with emission per country. That way the user can see for every year which country is the highest emitting country!
 
+The result is something like this but then for emissions:
+
+![https://miro.medium.com/max/1600/1*37uCN6y1WyLukxwCadhWRw.gif](https://miro.medium.com/max/1600/1*37uCN6y1WyLukxwCadhWRw.gif)
+
 **Time scope**<br/>
 We suggest to not spent more than 2 hours, but you're free to spend more time.
 
