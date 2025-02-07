@@ -15,7 +15,7 @@ const mockData = {
   ],
 };
 
-describe('Home.vue', () => {
+describe('Testing Home.vue', () => {
   const setup = async () => {
     const pinia = createTestingPinia();
     const store = useDataStore();
