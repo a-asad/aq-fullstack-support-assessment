@@ -36,7 +36,12 @@ cd client && npm i
 
 ### Set env secret
 
-In the `api` folder rename `.env.example` to `.env` and paste the secret that you've received from us.
+In the `api` folder rename `.env.example` to `.env` and paste the secret that you've received from us. 
+ 
+Add a `.env` file in the client folder with the following variable:
+```
+VITE_BASE_URL=http://localhost:5010
+```
 
 ### Run
 
