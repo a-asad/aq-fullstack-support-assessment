@@ -1,4 +1,4 @@
-import { prepareEmissionsByCountry } from "./seeds.controller";
+import { getEmissionsDataByCountry } from "./seeds.controller";
 
 /**
  * Controller to get emissions data by country.
@@ -9,7 +9,7 @@ import { prepareEmissionsByCountry } from "./seeds.controller";
  */
 export const getEmissionsByCountry = async (req, res, currentTimeProvider = () => Date.now()) => {
   try {    
-    const emissionsPerCountry = await prepareEmissionsByCountry();
+    const emissionsPerCountry = await getEmissionsDataByCountry();
     
     return res.json({ data: emissionsPerCountry, message: "Emissions per country retrieved successfully!" });
   } catch (error) {

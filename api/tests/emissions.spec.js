@@ -7,7 +7,7 @@ describe('Testing emissions controller', () => {
   let prepareEmissionsByCountryStub;
 
   beforeEach(() => {
-    prepareEmissionsByCountryStub = sinon.stub(seedsController, 'prepareEmissionsByCountry');
+    prepareEmissionsByCountryStub = sinon.stub(seedsController, 'getEmissionsDataByCountry');
   });
 
   afterEach(() => {
