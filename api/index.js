@@ -4,7 +4,7 @@ import rateLimit from 'express-rate-limit';
 import cors from 'cors';
 import landingRoutes from './routes/v1/landing.routes';
 import routesV1 from './routes/v1/index';
-import { shouldFetchOnRestart } from './controllers/seeds.controller';
+import { preloadEmissionsData } from './controllers/seeds.controller';
 import { ALLOWED_ORIGINS, RATE_LIMITER_OPTIONS, PORT } from './configs/vars';
 
 const app = express();
@@ -33,6 +33,9 @@ app.use('/', landingRoutes);
 
 // Routes for API version 1
 app.use('/v1', routesV1);
+
+// preload emission data on server start, this will keep fetching in the background
+preloadEmissionsData();
 
 const port = PORT || 5000
 // Start the server and listen on port mentioned in .env or 5000

@@ -12,7 +12,7 @@ export const useDataStore = defineStore('data', {
 
   actions: {
     async getAllEmissionData() {
-      const { data } = await axiosInstance.get<Emissions>(`countries/emissions-per-country`);
+      const { data } = await axiosInstance.get<Emissions>(`v1/countries/emissions-per-country`);
 
       return data.data;
     },

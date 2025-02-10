@@ -26,7 +26,7 @@
 
   import { getColorsRange } from '@/lib/utils/getColorsRange';
   import { useDataStore } from '@/stores/dataStore';
-  import type { CountryEmissionsForYear } from '@/typings/general';
+  import type { Emissions } from '@/typings/general';
   import HomeHeader from '@/components/home/HomeHeader.vue';
   import HomeChartRow from '@/components/home/HomeChartRow.vue';
 
@@ -34,7 +34,7 @@
     currentYear: number;
     minYear: number;
     maxYear: number;
-    emissionData: CountryEmissionsForYear[];
+    emissionData: Emissions['data'];
   };
 
   export default defineComponent({
@@ -92,7 +92,7 @@
       },
     },
     async mounted() {
-      this.getData();
+      await this.getData();
 
       // Note: set interval to show different values
       setInterval(() => {
@@ -116,8 +116,8 @@
           const years = Object.keys(this.emissionData);
 
           if (years.length) {
-            this.minYear = years[0];
-            this.maxYear = years[years.length - 1];
+            this.minYear = parseInt(years[0]);
+            this.maxYear = parseInt(years[years.length - 1]);
             this.currentYear = this.minYear;
           }
         } catch (err) {

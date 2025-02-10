@@ -13,7 +13,7 @@ export type CountryEmissionsForYear = {
 
 export type Emissions = { 
   data: {
-    [year: number]: CountryEmissionsForYear 
+    [year: number]: CountryEmissionsForYear[]
   };
   message: string;
 }
